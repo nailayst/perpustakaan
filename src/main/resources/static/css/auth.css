@@ -1,0 +1,90 @@
+/* General Styling */
+.auth-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.auth-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.auth-header {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.auth-body {
+    padding: 2rem;
+    background-color: #fff;
+}
+
+/* Form Elements */
+.auth-form .form-control {
+    border-radius: 8px;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.auth-form .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.auth-form label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Buttons */
+.auth-btn {
+    background-color: #3498db;
+    border: none;
+    padding: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Links */
+.auth-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.auth-link:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+
+/* Alerts */
+.auth-alert {
+    border-radius: 8px;
+    padding: 12px 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .auth-container {
+        padding: 1rem;
+    }
+    
+    .auth-body {
+        padding: 1.5rem;
+    }
+}
