@@ -10,11 +10,10 @@
 </head>
 <body>
     <div th:replace="~{fragments/navbar :: navbar}"></div>
-    
     <div class="member-dashboard-container">
         <div class="member-card">
             <div class="member-header">
-                <h4><i class="fas fa-user-graduate me-2"></i> Member Dashboard</h4>
+                <h4><i class="fas fa-user-graduate me-2"></i> Dashboard</h4>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -22,13 +21,16 @@
                     <div class="col-md-3 member-sidebar-col">
                         <div class="list-group">
                             <a href="#" class="list-group-item member-sidebar-item active">
-                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                                <i class="fas fa-user-graduate me-2"></i> Dashboard
                             </a>
                             <a href="#" class="list-group-item member-sidebar-item">
-                                <i class="fas fa-search"></i> Cari Buku
+                                <i class="fas fa-search me-2"></i> Cari Buku
                             </a>
                             <a href="#" class="list-group-item member-sidebar-item">
-                                <i class="fas fa-history"></i> Riwayat Pinjam
+                                <i class="fas fa-history me-2"></i> Riwayat Pinjam
+                            </a>
+                            <a href="/profile" class="list-group-item member-sidebar-item">
+                                <i class="fa-solid fa-address-card me-2"></i> Profil
                             </a>
                         </div>
                     </div>
@@ -40,9 +42,9 @@
                             <div class="card-body">
                                 <h5 class="card-title text-success">
                                     <i class="fas fa-user me-2"></i>
-                                    Selamat datang, <span th:text="${username}"></span>
+                                    Selamat datang, <span th:text="${username}"></span>!
                                 </h5>
-                                <p class="card-text">Anda login sebagai Member dengan akses penuh untuk mencari dan meminjam buku.</p>
+                                <p class="card-text">Anda login sebagai Member</p>
                             </div>
                         </div>
                         
@@ -77,13 +79,14 @@
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <a href="#" class="btn btn-outline-info w-100">
-                                            <i class="fas fa-clock me-2"></i> Riwayat
+                                            <i class="fas fa-clock me-2"></i> Riwayat Pinjam
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+
+                    </div> <!-- end col-md-9 -->
                 </div>
             </div>
         </div>

@@ -59,4 +59,7 @@ public class User implements UserDetails {
             return "ROLE_" + name();
         }
     }
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Profile profile;
 }

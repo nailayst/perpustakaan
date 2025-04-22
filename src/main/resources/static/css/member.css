@@ -1,6 +1,6 @@
 /* Member Dashboard Styles */
 .member-dashboard-container {
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .member-card {
@@ -37,7 +37,7 @@
 }
 
 .member-sidebar-item i {
-    margin-right: 10px;
+    margin-right: 20px;
     width: 20px;
     text-align: center;
 }
