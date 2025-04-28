@@ -20,17 +20,12 @@
                     <!-- Sidebar Navigation -->
                     <div class="col-md-3 member-sidebar-col">
                         <div class="list-group">
-                            <a href="#" class="list-group-item member-sidebar-item active">
+                            <a th:href="@{/member/dashboard}" 
+                               class="list-group-item member-sidebar-item active">
                                 <i class="fas fa-user-graduate me-2"></i> Dashboard
                             </a>
-                            <a href="#" class="list-group-item member-sidebar-item">
-                                <i class="fas fa-search me-2"></i> Cari Buku
-                            </a>
-                            <a href="#" class="list-group-item member-sidebar-item">
-                                <i class="fas fa-history me-2"></i> Riwayat Pinjam
-                            </a>
-                            <a href="/profile" class="list-group-item member-sidebar-item">
-                                <i class="fa-solid fa-address-card me-2"></i> Profil
+                            <a th:href="@{/profile}" class="list-group-item member-sidebar-item">
+                                <i class="fas fa-address-card me-2"></i> Profil
                             </a>
                         </div>
                     </div>
@@ -38,11 +33,11 @@
                     <!-- Main Content -->
                     <div class="col-md-9">
                         <!-- Welcome Card -->
-                        <div class="card member-welcome-card border-0 shadow-sm">
+                        <div class="card member-welcome-card border-0 shadow-sm mb-4">
                             <div class="card-body">
                                 <h5 class="card-title text-success">
                                     <i class="fas fa-user me-2"></i>
-                                    Selamat datang, <span th:text="${username}"></span>!
+                                    Selamat datang, <span th:text="${username}"></span>
                                 </h5>
                                 <p class="card-text">Anda login sebagai Member</p>
                             </div>
@@ -54,8 +49,28 @@
                                 <h5 class="mb-0"><i class="fas fa-book-open me-2"></i> Rekomendasi Buku</h5>
                             </div>
                             <div class="card-body">
-                                <div class="row" id="featured-books">
-                                    <!-- Books will be loaded here by JavaScript -->
+                                <div class="row g-3">
+                                    <!-- Static placeholders -->
+                                    <div class="col-md-4" th:each="book : ${featuredBooks}">
+                                        <div class="card h-100">
+                                            <img th:src="${book.coverUrl}" 
+                                                 class="card-img-top" 
+                                                 alt="Cover Buku" 
+                                                 style="height: 200px; object-fit: cover;">
+                                            <div class="card-body">
+                                                <h6 class="card-title" th:text="${book.title}">Judul Buku</h6>
+                                                <p class="card-text text-muted" th:text="${book.author}">
+                                                    Nama Penulis
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Fallback jika tidak ada featuredBooks -->
+                                    <div class="col-12 text-center" 
+                                         th:if="${#lists.isEmpty(featuredBooks)}">
+                                        <p class="text-muted">Belum ada rekomendasi buku saat ini.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
